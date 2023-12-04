@@ -1,0 +1,29 @@
+Initialization:
+Initialize parameters: Set the input size, hidden layer size, output size, learning rate, and the number of epochs.
+Initialise weights and biases: Assign random values to the weights and biases for the input-to-hidden, hidden-to-hidden, and hidden-to-output connections.
+
+Forward Pass:
+For each input sequence:
+Initialise hidden state to zeros.
+For each time step:
+-Combine input and hidden state information.
+-Apply a non-linear activation function.
+-Update the hidden state.
+Compute the final output: Combine information from the hidden state and produce the model's prediction.
+
+Compute Loss:
+Compute the binary cross-entropy loss based on the predicted output and the target label.
+
+Backward Pass (Backpropagation Through Time):
+Initialize gradients.
+For each time step, compute gradients:
+Evaluate the impact of the loss on the output.
+Propagate the impact backward through the network.
+Accumulate gradients for each connection.
+
+Update Parameters:
+Update the parameters (weights and biases) using the computed gradients and the learning rate.
+Repeat the forward and backward passes for the specified number of epochs.
+
+Prediction:
+Utilise the trained RNN model to predict motifs in new, unseen DNA sequences.
