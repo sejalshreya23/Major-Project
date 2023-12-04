@@ -1,0 +1,33 @@
+Initialization:
+Initialize filters (kernels) and biases for each layer randomly.
+Define the number of layers, filter sizes, pooling sizes, and other hyperparameters.
+
+
+Forward Pass:
+For each input DNA sequence:
+Perform one-hot encoding.
+Iterate through convolutional layers:
+Apply filters to the input sequence.
+Apply an activation function (e.g., ReLU).
+Perform pooling (e.g., max pooling).
+Flatten the output and feed it through fully connected layers:
+Apply an activation function.
+Compute the final output using the output layer.
+
+Compute Loss:
+4. Compute the loss based on the predicted output and actual labels.
+
+Backward Pass (Backpropagation):
+5. Compute the gradients of the loss with respect to the parameters.
+6. Update the filters and biases using gradient descent:
+Update filters and biases for the output layer.
+Backpropagate errors through fully connected layers.
+Backpropagate errors through pooling and activation layers.
+Update filters and biases for convolutional layers.
+
+Repeat:
+7. Repeat the forward and backward passes for multiple epochs until convergence.
+
+
+Prediction:
+8. Use the trained CNN model to predict motifs in new, unseen DNA sequences.
