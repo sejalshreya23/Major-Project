@@ -1,1 +1,1 @@
-# Major-Project
+# Sequence Motif finding using ML
