@@ -1,0 +1,32 @@
+1. Initialise the weights (w) and bias (b) to zero.
+
+2. Define the one-hot encoding function for DNA sequences:
+   - Represent each base (A, C, G, T) as a binary vector.
+
+3. Concatenate the positive and negative sequences into a single dataset.
+   - Create labels: +1 for positive sequences, -1 for negative sequences.
+
+4. Implement the Linear SVM Training:
+   a. For each epoch:
+      - Shuffle the dataset.
+      b. For each data point (xi, yi) in the dataset:
+         - Compute the decision function: f(xi) = w * xi + b
+         - Update weights and bias based on the hinge loss gradient:
+           - If yi * f(xi) < 1:
+             - w = w - α(2λw - yi * xi)
+             - b = b - αyi
+           - Else:
+             - w = w - α(2λw)
+         - Regularise the weights to prevent overfitting.
+
+5. Repeat the training process for the specified number of epochs.
+
+6. The trained SVM model with weights (w) and bias (b) is ready for making predictions.
+
+7. Implement the Prediction:
+   - Given a new DNA sequence:
+     a. One-hot encode the sequence.
+     b. Compute the decision function: f(x) = w * x + b.
+     c. If f(x) > 0, predict the motif is present; otherwise, predict it's not present.
+
+8. The trained SVM model can now be used to predict whether a given DNA sequence contains the motif.
